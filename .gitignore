@@ -1,0 +1,4 @@
+**/alf_data
+.*
+!/.gitignore
+!/.dockerignore

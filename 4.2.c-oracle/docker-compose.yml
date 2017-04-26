@@ -1,0 +1,20 @@
+version: '2'
+services:
+ alfresco:
+  build: ./alfresco
+  links:
+   - libreoffice
+  ports:
+   - 8080:8080
+  volumes:
+   - ./alf_data/contentstore:/usr/local/alfresco/alf_data/contentstore
+   - ./alf_data/contentstore.deleted:/usr/local/alfresco/alf_data/contentstore.deleted
+
+ db:
+  build: ./oracle11g
+  network_mode: service:alfresco
+  volumes:
+   - ./out:/u01/app/oracle/admin/XE/dpdump/exp_alfresco
+
+ libreoffice:
+  image: xcgd/libreoffice

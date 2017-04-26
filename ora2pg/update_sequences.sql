@@ -1,0 +1,44 @@
+select setval('alf_access_control_entry_seq', (select max(id)+1 from alf_access_control_entry), false);
+select setval('alf_access_control_list_seq', (select max(id)+1 from alf_access_control_list), false);
+select setval('alf_ace_context_seq', (select max(id)+1 from alf_ace_context), false);
+select setval('alf_acl_change_set_seq', (select max(id)+1 from alf_acl_change_set), false);
+select setval('alf_acl_member_seq', (select max(id)+1 from alf_acl_member), false);
+select setval('alf_activity_feed_control_seq', (select max(id)+1 from alf_activity_feed_control), false);
+select setval('alf_activity_feed_seq', (select max(id)+1 from alf_activity_feed), false);
+select setval('alf_activity_post_seq', (select max(sequence_id)+1 from alf_activity_post), false);
+select setval('alf_audit_app_seq', (select max(id)+1 from alf_audit_app), false);
+select setval('alf_audit_entry_seq', (select max(id)+1 from alf_audit_entry), false);
+select setval('alf_audit_model_seq', (select max(id)+1 from alf_audit_model), false);
+select setval('alf_authority_alias_seq', (select max(id)+1 from alf_authority_alias), false);
+select setval('alf_authority_seq', (select max(id)+1 from alf_authority), false);
+select setval('alf_child_assoc_seq', (select max(id)+1 from alf_child_assoc), false);
+select setval('alf_content_data_seq', (select max(id)+1 from alf_content_data), false);
+select setval('alf_content_url_seq', (select max(id)+1 from alf_content_url), false);
+select setval('alf_encoding_seq', (select max(id)+1 from alf_encoding), false);
+select setval('alf_locale_seq', (select max(id)+1 from alf_locale), false);
+select setval('alf_lock_resource_seq', (select max(id)+1 from alf_lock_resource), false);
+select setval('alf_lock_seq', (select max(id)+1 from alf_lock), false);
+select setval('alf_mimetype_seq', (select max(id)+1 from alf_mimetype), false);
+select setval('alf_namespace_seq', (select max(id)+1 from alf_namespace), false);
+select setval('alf_node_assoc_seq', (select max(id)+1 from alf_node_assoc), false);
+select setval('alf_node_seq', (select max(id)+1 from alf_node), false);
+select setval('alf_permission_seq', (select max(id)+1 from alf_permission), false);
+select setval('alf_prop_class_seq', (select max(id)+1 from alf_prop_class), false);
+select setval('alf_prop_double_value_seq', (select max(id)+1 from alf_prop_double_value), false);
+select setval('alf_prop_root_seq', (select max(id)+1 from alf_prop_root), false);
+select setval('alf_prop_serializable_value_seq', (select max(id)+1 from alf_prop_serializable_value), false);
+select setval('alf_prop_string_value_seq', (select max(id)+1 from alf_prop_string_value), false);
+select setval('alf_prop_unique_ctx_seq', (select max(id)+1 from alf_prop_unique_ctx), false);
+select setval('alf_prop_value_seq', (select max(id)+1 from alf_prop_value), false);
+select setval('alf_qname_seq', (select max(id)+1 from alf_qname), false);
+select setval('alf_server_seq', (select max(id)+1 from alf_server), false);
+select setval('alf_store_seq', (select max(id)+1 from alf_store), false);
+select setval('alf_transaction_seq', (select max(id)+1 from alf_transaction), false);
+select setval('alf_usage_delta_seq', (select max(id)+1 from alf_usage_delta), false);
+select setval('avm_nodes_seq', (select max(id)+1 from avm_nodes), false);
+select setval('avm_store_properties_seq', (select max(id)+1 from avm_store_properties), false);
+select setval('avm_stores_seq', (select max(id)+1 from avm_stores), false);
+select setval('avm_version_roots_seq', (select max(id)+1 from avm_version_roots), false);
+
+
+
