@@ -154,11 +154,17 @@ public class PostgresSplitter implements CommandLineRunner {
 		bw = new BufferedWriter(new FileWriter(updateSequences));
 		for (String sequence : sequencesList) {
 			String sql = "";
-			if (sequence.equals("alf_activity_post_seq")) {
+			if (sequence.endsWith("alf_activity_post_seq")) {
 				sql = "select setval('" + sequence + "', " +
 				        "(select max(sequence_id)+1 from " + sequence.substring(0, sequence.length() - 4) + "), false);";
+			} else if (sequence.endsWith("act_evt_log_log_nr__seq")) {
+				sql = "select setval('" + sequence + "', " +
+						"(select max(log_nr_)+1 from " + sequence.substring(0, sequence.length() - 12) + "), false);";
+			} else if (sequence.endsWith("alf_content_url_enc_seq")) {
+				sql = "select setval('" + sequence + "', " +
+						"(select max(id)+1 from " + sequence.substring(0, sequence.length() - 4) + "ryption), false);";
 			}
-			else if (!sequence.equals("hibernate_sequence")) {
+			else if (!sequence.endsWith("hibernate_sequence")) {
 				sql = "select setval('" + sequence + "', " +
 			        "(select max(id)+1 from " + sequence.substring(0, sequence.length() - 4) + "), false);";
 			}
