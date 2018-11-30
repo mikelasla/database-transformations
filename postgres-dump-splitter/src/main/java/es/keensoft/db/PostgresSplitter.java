@@ -35,6 +35,7 @@ public class PostgresSplitter implements CommandLineRunner {
 	
 	private static final String ALTER_TABLE_START = "ALTER TABLE";
 	private static final String CREATE_INDEX_START = "CREATE INDEX";
+	private static final String CREATE_UNIQUE_INDEX_START = "CREATE UNIQUE INDEX";
 	private static final String CREATE_SEQUENCE = "CREATE SEQUENCE";
 	private static final String CREATE_TABLE ="CREATE TABLE";
 	
@@ -96,7 +97,7 @@ public class PostgresSplitter implements CommandLineRunner {
 		while ((line = br.readLine()) != null) {
 			
 			if (!insideIndexConstraint) {
-				if (line.startsWith(ALTER_TABLE_START) || line.startsWith(CREATE_INDEX_START)) {
+				if (line.startsWith(ALTER_TABLE_START) || line.startsWith(CREATE_INDEX_START) || line.startsWith(CREATE_UNIQUE_INDEX_START)) {
 				    bw.write(line + System.lineSeparator());
 				    insideIndexConstraint = !line.endsWith(DDL_SENTENCE_END);
 					if (!insideIndexConstraint) bw.write(System.lineSeparator());
